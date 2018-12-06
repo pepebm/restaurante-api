@@ -1,10 +1,14 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+
+
+const roleEnum = ['ADMIN', 'MANAGER', 'WAITER', 'JANITOR'];
 
 const Schema  = mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
-  password: { type: String, required: true, min: 8 }  
+  password: { type: String, required: true, min: 8 },
+  phone: { type: String, required: true, min: 8 },
+  role: { type: String, required: true, enum: roleEnum }
 });
 
 // Validations
@@ -14,4 +18,4 @@ Schema.path('email').validate(email => {
   return emailRegex.test(email);
 }, 'The e-mail field is not correct or empty.');
 
-export default mongoose.model('User', Schema);
+export default mongoose.model('Employee', Schema);

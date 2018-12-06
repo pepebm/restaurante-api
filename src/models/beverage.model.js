@@ -1,10 +1,15 @@
 import moongose from 'mongoose';
 
 const Schema = moongose.Schema({
-  name: { type: String, required: true, max: 25 },
-  price: { type: Number, required: true, min: 5 },
+  name: { type: String, required: true, max: 25, unique: true },
+  price: { type: Number, required: true },
   alcohol: { type: Boolean, required: true, default: false },
-  capacity: { type: Number, required: true } // ml
+  size: { type: Number, required: true }, // ml
+  price: { type: Number, required: true },
+  stock: { type: Number, required: true, min: 1 },
+  restock: { type: Number, required: true },
+  kcal: { type: Number, required: true }
 });
+
 
 export default moongose.model('Beverage', Schema);

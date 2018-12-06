@@ -1,6 +1,5 @@
 import express from 'express';
 import { 
-  test, 
   createBeverage, 
   showBeverage, 
   updateBeverage,
@@ -9,7 +8,6 @@ import {
 
 const router = express.Router();
 
-router.get('/test', test);
 router.post('/new', createBeverage);
 router.get('/:id', showBeverage);
 router.put('/:id/update', updateBeverage);

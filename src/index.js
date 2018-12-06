@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from 'mongoose';
 
 import beverageRoute from './routes/beverage.route';
-import userRoute from './routes/user.route';
+import employeeRoute from './routes/employee.route';
 
 // MongoDB initial Setup
 const mongoUrl = 'mongodb://peps95:abc123@ds235840.mlab.com:35840/restaurant-prototype-db'
@@ -18,7 +18,6 @@ mongoose.connection.once(
   console.log.bind(console, '\n\tMongoDB connected\n')
 );
 
-
 // Everything else regarding express, therefore the API
 const app = express();
 // Middleware
@@ -27,6 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Routes
 app.get('/', (req, res) => res.send('hello from the other side'));
 app.use('/beverages', beverageRoute);
-app.use('/users', userRoute);
+app.use('/employee', employeeRoute);
 // Start up
 app.listen(1234, () => console.log('\n\tServer ON\n'));
