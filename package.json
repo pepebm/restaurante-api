@@ -1,0 +1,31 @@
+{
+  "name": "rapi",
+  "version": "0.0.1",
+  "description": "API with express & mongodb that will power up test automate local restaurants",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel --presets env -d lib/ src",
+    "start": "nodemon lib/index.js",
+    "test": ""
+  },
+  "keywords": [
+    "API",
+    "Automate",
+    "Node",
+    "Express",
+    "Innovation"
+  ],
+  "author": "Jose Manuel Beauregard Mendez",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14",
+    "nodemon": "^1.18.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
